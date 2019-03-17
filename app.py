@@ -17,10 +17,6 @@ api = Api(app)
 CORS(app)
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 # Instantiate JWT passing function defined for authentication and authentication state as parameters.
 jwt = JWT( app, authenticate, is_authenticated)
 
